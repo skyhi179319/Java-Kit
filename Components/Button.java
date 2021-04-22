@@ -7,6 +7,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Insets;
 import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseListener;
 
 import javax.swing.AbstractButton;
 import javax.swing.JComponent;
@@ -68,11 +70,12 @@ public class Button extends javax.swing.JButton{
 		}
 	}
 
-	public Button(int Width,String Text,Color Foreground,Color Border) {
+	public Button(int Width,String Text,Color Foreground,Color Border,MouseListener event) {
 		width = Width;
 		text = Text;
 		foreground = Foreground;
 		border = Border;
+		super.addMouseListener(event);
 	}
 	@Override
 	public void paintComponent(Graphics g) {
