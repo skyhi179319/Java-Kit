@@ -41,6 +41,8 @@ public class colors {
     public static Color silver = new Color(192,192,192);
     public static Color slategray = new Color(112,128,144);
     public static Color lightslategray = new Color(119,136,153);
+    // Black
+    public static Color Black = Color.black;
     public static class Palettes{
     	private static Color[] BasicPalette = {red,green,blue,yellow,gold,purple,gray,silver,slategray,white};
     	private static Color[] LightPalette = {lightred,lightgreen,lightblue,lightyellow,gold,lightpurple,silver,lightslategray};
