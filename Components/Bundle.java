@@ -41,7 +41,7 @@ public class Bundle {
 			TextfieldComponents.add(Lastname);
 			ButtonComponents.add(Button);
 		}
-		public InfoForm(JComponent[] age,MouseListener event) {
+		public InfoForm(JComponent[] comp,MouseListener event) {
 			JLabel FirstnameL = new Components.Label("Firstname :", getForeground());
 			super.add(FirstnameL);
 			JTextField Firstname =  new Components.Textfield(10, getForeground(), getBackground());
@@ -51,9 +51,9 @@ public class Bundle {
 			JTextField Lastname =  new Components.Textfield(10, getForeground(), getBackground());
 			super.add(Lastname);
 			JButton Button = new Components.Button(28, "Add", true, getForeground(), Colors.colors.silver,event);
-			JComponent age0 = age[0];
+			JComponent age0 = comp[0];
 			super.add(age0);
-			JComponent age1 = age[1];
+			JComponent age1 = comp[1];
 			super.add(age1);
 			super.add(Button);
 			LableComponents.add(FirstnameL);

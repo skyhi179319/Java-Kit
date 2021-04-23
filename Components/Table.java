@@ -9,9 +9,9 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 public class Table{
 	public static class Tables extends JPanel{
+		public static DefaultTableModel model = new DefaultTableModel();
 		// Two Columns
 		public Tables(String[] Columns,TreeMap<String,String> Data,Color Grid,Color Background,Color Foreground) {
-			DefaultTableModel model = new DefaultTableModel();
 			JTable j;
 			j = new JTable(model) {
 				public boolean editCellAt(int row, int column, java.util.EventObject e) {
@@ -35,7 +35,6 @@ public class Table{
 		}
 		// Three Columns
 		public Tables(String[] Columns,TreeMap<String,String> Data1and2,String[] Data3,Color Grid,Color Background,Color Foreground) {
-			DefaultTableModel model = new DefaultTableModel();
 			JTable j;
 			j = new JTable(model) {
 				public boolean editCellAt(int row, int column, java.util.EventObject e) {
