@@ -15,5 +15,6 @@ public class Window extends JFrame{
 		super.getContentPane().add(South,BorderLayout.SOUTH);
 		super.getContentPane().add(West,BorderLayout.WEST);
 		super.getContentPane().add(Center,BorderLayout.CENTER);
+		super.show();
 	}
 }

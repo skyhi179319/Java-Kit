@@ -50,4 +50,20 @@ public class Math {
 		}
 		return mathadd + mathsub + mathmult + mathdiv;
 	}
+	public static int Avg(int[] Numbers) {
+		int math = 0;
+		for (int i = 0; i < Numbers.length; i++) {
+			math = math + Numbers[i];
+		}
+		return math / Numbers.length;
+	}
+	public static int Count(int[] Numbers) {
+		return Numbers.length;
+	}
+	public static int Min(int Number1, int Number2) {
+		return java.lang.Math.min(Number1, Number2);
+	}
+	public static int Max(int Number1, int Number2) {
+		return java.lang.Math.max(Number1, Number2);
+	}
 }

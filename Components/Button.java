@@ -23,6 +23,7 @@ public class Button extends javax.swing.JButton{
 	String text;
 	Color foreground;
 	Color border;
+	boolean gradient;
 	private static class newButtonUI extends BasicButtonUI{
 		static Color Color;
 		static int Width;
@@ -70,11 +71,12 @@ public class Button extends javax.swing.JButton{
 		}
 	}
 
-	public Button(int Width,String Text,Color Foreground,Color Border,MouseListener event) {
+	public Button(int Width,String Text,boolean Gradient, Color Foreground,Color Border,MouseListener event) {
 		width = Width;
 		text = Text;
 		foreground = Foreground;
 		border = Border;
+		gradient = Gradient;
 		super.addMouseListener(event);
 	}
 	@Override
@@ -89,7 +91,12 @@ public class Button extends javax.swing.JButton{
 	    g2.setPaint(getForeground());
 	    int cac = getWidth()/ 2 - getWidth() + width * 2;
 	    setText(text);
-	    setUI(new newButtonUI(width,foreground));
+	    if(gradient == true) {
+	    	setUI(new newButtonUI(width,foreground));
+	    }
+	    else {
+	    	
+	    }
 	    g2.drawString(getText(), cac, getHeight() / 2 + 4);
 	    g2.dispose();
 	    
