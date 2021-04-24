@@ -20,6 +20,16 @@ public class Bundle {
 			TextfieldComponents.add(Search);
 		}
 	}
+	public static class Add extends JPanel{
+		public static ArrayList<JTextField> TextfieldComponents = new ArrayList<JTextField>();
+		public Add(MouseListener event) {
+			JTextField Add = new Components.Textfield(10, getForeground(), getBackground());
+			super.add(Add);
+			super.add(new Components.Button(28, "Add", true, getForeground(), Colors.colors.silver,event));
+			super.updateUI();
+			TextfieldComponents.add(Add);
+		}
+	}
 	public static class InfoForm extends JPanel{
 		public static ArrayList<JLabel> LableComponents = new ArrayList<JLabel>();
 		public static ArrayList<JTextField> TextfieldComponents = new ArrayList<JTextField>();
