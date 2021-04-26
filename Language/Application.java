@@ -1,5 +1,9 @@
 package Language;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.Random;
 import java.util.TreeMap;
 
 import javax.swing.*;
@@ -31,6 +35,30 @@ public class Application {
             // remove selected row from the model
             Model.removeRow(J.getSelectedRow());
          }
+	}
+	public static void writeFile(String Filename,String text) {
+		try {
+	         String file = Filename;
+	         FileWriter myWriter = new FileWriter(file);
+	         myWriter.write(text);
+	         myWriter.close();
+	      } catch (IOException e) {
+	         Language.Console.Log("An error occurred.");
+	         e.printStackTrace();
+	      }
+	}
+	public void writeFile(String Filename, String[] text) {
+		try {
+	         String file = Filename;
+	         FileWriter myWriter = new FileWriter(file);
+	         for (int i = 0; i < text.length; i++) {
+        	 	myWriter.write(text[i] + "\r\n");
+	         }
+	         myWriter.close();
+	      } catch (IOException e) {
+	         System.out.println("An error occurred.");
+	         e.printStackTrace();
+	      }
 	}
 	public static void exitApplication() {
 		System.exit(0);
