@@ -1,6 +1,7 @@
 package Components;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.TreeMap;
 
 import javax.swing.JPanel;
@@ -10,6 +11,7 @@ import javax.swing.table.DefaultTableModel;
 public class Table{
 	public static class Tables extends JPanel{
 		public static DefaultTableModel model = new DefaultTableModel();
+		public static ArrayList<JTable> table = new ArrayList<JTable>();
 		// Two Columns
 		public Tables(String[] Columns,TreeMap<String,String> Data,Color Grid,Color Background,Color Foreground) {
 			JTable j;
@@ -28,6 +30,7 @@ public class Table{
 			j.setGridColor(Grid);
 		    j.setBackground(Background);
 		    j.setForeground(Foreground);
+		    table.add(j);
 			JScrollPane sp = new JScrollPane(j);
 			sp.getVerticalScrollBar().setBackground(Colors.colors.lightblue);
 			super.add(sp);
@@ -53,6 +56,7 @@ public class Table{
 			j.setGridColor(Grid);
 		    j.setBackground(Background);
 		    j.setForeground(Foreground);
+		    table.add(j);
 			JScrollPane sp = new JScrollPane(j);
 			sp.getVerticalScrollBar().setBackground(Colors.colors.lightblue);
 			super.add(sp);
