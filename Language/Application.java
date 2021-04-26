@@ -26,6 +26,12 @@ public class Application {
 	public static void clearText(JTextField Field) {
 		Field.setText("");
 	}
+	public static void deleteRow(JTable J ,DefaultTableModel Model) {
+		if(J.getSelectedRow() != -1) {
+            // remove selected row from the model
+            Model.removeRow(J.getSelectedRow());
+         }
+	}
 	public static void exitApplication() {
 		System.exit(0);
 	}
