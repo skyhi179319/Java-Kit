@@ -47,7 +47,20 @@ public class Application {
 	         e.printStackTrace();
 	      }
 	}
-	public void writeFile(String Filename, String[] text) {
+	public static void writeFile(String Filename, String[] text) {
+		try {
+	         String file = Filename;
+	         FileWriter myWriter = new FileWriter(file);
+	         for (int i = 0; i < text.length; i++) {
+        	 	myWriter.write(text[i] + "\r\n");
+	         }
+	         myWriter.close();
+	      } catch (IOException e) {
+	         System.out.println("An error occurred.");
+	         e.printStackTrace();
+	      }
+	}
+	public static void writeFile(String Filename, Object[] text) {
 		try {
 	         String file = Filename;
 	         FileWriter myWriter = new FileWriter(file);
