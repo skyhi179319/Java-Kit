@@ -1,6 +1,10 @@
 package Components;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -8,6 +12,9 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.Timer;
+
+import Language.Application;
 
 public class Bundle {
 	public static class Search extends JPanel{
@@ -72,5 +79,23 @@ public class Bundle {
 			TextfieldComponents.add(Lastname);
 			ButtonComponents.add(Button);
 		}
+	}
+	public static class TimeInfo extends JPanel {
+		public TimeInfo() {
+			JLabel timeLable = new Components.Label("Time: ", Settings.Initalize.Bundle.TimeInfo.labelForeground);
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");  
+			LocalDateTime now = LocalDateTime.now(); 
+			JLabel time = new Components.Label(dtf.format(now), Settings.Initalize.Bundle.TimeInfo.timeForeground);
+			super.add(timeLable);
+			super.add(time);
+			Timer myTimer = new Timer(1000, new ActionListener(){
+			    @Override
+			    public void actionPerformed(ActionEvent e) {
+			    	Application.updateTime(time);
+			    }
+			});
+			myTimer.start();
+		}
+		
 	}
 }

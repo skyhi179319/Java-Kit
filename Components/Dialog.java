@@ -31,6 +31,7 @@ public class Dialog extends JDialog{
 	    super.getContentPane().add(closingMessage, BorderLayout.CENTER);
 	    super.getContentPane().add(closingButtons, BorderLayout.SOUTH);
 	    buttonComponents.add(closingButtons);
+	    dialog.add(this);
 	    super.show();
 	}
 	public Dialog(int X,int Y, int Width,int Height,String Title,String Message,MouseListener eventYes,MouseListener eventNo, boolean closeDialog) {

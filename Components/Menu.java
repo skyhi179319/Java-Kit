@@ -22,7 +22,7 @@ public class Menu{
 		public menuItem(String text,ActionListener action) {
 			super.setText(text);
 			super.addActionListener(action);
-			super.setBackground(Colors.colors.whitesmoke);
+			super.setBackground(Settings.Initalize.Menu.menuItemBackground);
 		}
 	}
 	public static class menu extends JMenu{

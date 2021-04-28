@@ -1,9 +1,16 @@
 package Language;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.TreeMap;
 
 import javax.swing.*;
@@ -72,6 +79,39 @@ public class Application {
 	         System.out.println("An error occurred.");
 	         e.printStackTrace();
 	      }
+	}
+	public static String readSingleLine(String Filename) {
+		try
+		{
+			BufferedReader Reader = new BufferedReader(new FileReader(Filename));
+	        String Line1 = Reader.readLine();
+	        return Line1;
+		}
+		catch(IOException f) {
+			return "Error: " + f.getMessage();
+		}
+		
+	}
+	public static Object[] readFile(String Filename) {
+		ArrayList<String> obj = new ArrayList<String>();
+		try
+		{
+	        Scanner myReader = new Scanner(new File(Filename));
+	        while (myReader.hasNextLine()) {
+	          String data = myReader.nextLine();
+	          obj.add(data);
+	        }
+	        return obj.toArray();
+		}
+		catch(IOException f) {
+			obj.add(f.getMessage());
+			return obj.toArray();
+		}
+	}
+	public static void updateTime(JLabel label) {
+		DateTimeFormatter Cdtf = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");  
+		LocalDateTime current = LocalDateTime.now(); 
+		label.setText(Cdtf.format(current));
 	}
 	public static void exitApplication() {
 		System.exit(0);

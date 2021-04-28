@@ -23,8 +23,8 @@ import Colors.colors.Palettes;
 
 public class Tabs extends JTabbedPane{
 	public static class TabDesign extends BasicTabbedPaneUI {
-		public static Color select = new Color(Palettes.Gradients.Yellow.primary.getRGB());
-		public static Color deselect = new Color(Palettes.Gradients.Yellow.secondary.getRGB());
+		public static Color select = Settings.Initalize.Tabs.select;
+		public static Color deselect = Settings.Initalize.Tabs.deselect;
 	      private Color selectColor;
 	      private Color deSelectColor;
 	      private int inclTab = 4;
