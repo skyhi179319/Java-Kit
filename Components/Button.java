@@ -23,6 +23,7 @@ public class Button extends javax.swing.JButton{
 	String text;
 	Color foreground;
 	Color border;
+	Border border2;
 	boolean gradient;
 	private static class newButtonUI extends BasicButtonUI{
 		static Color Color;
@@ -30,25 +31,25 @@ public class Button extends javax.swing.JButton{
 		public newButtonUI(int width,Color color) {
 			Color = color;
 			Width = width;
-		}
-		public static newButtonUI MyButton = new newButtonUI(Width,Color);
-		protected Border m_borderRaised = UIManager.getBorder("Button.border");
-		protected Border m_borderLowered = UIManager.getBorder("Button.borderPressed");
-		protected Color m_backgroundNormal = UIManager.getColor("Button.background");
-		protected Color m_backgroundPressed = UIManager.getColor("Button.pressedBackground");
-		protected Color m_foregroundNormal = UIManager.getColor("Button.foreground");
-		protected Color m_foregroundActive = UIManager.getColor("Button.activeForeground");
-		protected Color m_focusBorder = UIManager.getColor("Button.focusBorder");
-		public static ComponentUI createUI(JComponent c) {
-			return MyButton;
-		}
-		public void installUI(JComponent c) {
-		  super.installUI(c);
-		}
-		public void uninstallUI(JComponent c) {
-		  super.uninstallUI(c);
-		}
-		public void paintComponent(Graphics g,JComponent c) {
+	}
+	public static newButtonUI MyButton = new newButtonUI(Width,Color);
+	protected Border m_borderRaised = UIManager.getBorder("Button.border");
+	protected Border m_borderLowered = UIManager.getBorder("Button.borderPressed");
+	protected Color m_backgroundNormal = UIManager.getColor("Button.background");
+	protected Color m_backgroundPressed = UIManager.getColor("Button.pressedBackground");
+	protected Color m_foregroundNormal = UIManager.getColor("Button.foreground");
+	protected Color m_foregroundActive = UIManager.getColor("Button.activeForeground");
+	protected Color m_focusBorder = UIManager.getColor("Button.focusBorder");
+	public static ComponentUI createUI(JComponent c) {
+		return MyButton;
+	}
+	public void installUI(JComponent c) {
+	  super.installUI(c);
+	}
+	public void uninstallUI(JComponent c) {
+	  super.uninstallUI(c);
+	}
+	public void paintComponent(Graphics g,JComponent c) {
 			// y = height
 			// x = width
 		    Graphics2D g2 = (Graphics2D) g.create();
@@ -78,6 +79,15 @@ public class Button extends javax.swing.JButton{
 		border = Border;
 		gradient = Gradient;
 		super.addMouseListener(event);
+	}
+	public Button(int Width,String Text,boolean Gradient, Color Foreground,Border Border,MouseListener event) {
+		width = Width;
+		text = Text;
+		foreground = Foreground;
+		border2 = Border;
+		gradient = Gradient;
+		super.addMouseListener(event);
+		super.setBorder(border2);
 	}
 	@Override
 	public void paintComponent(Graphics g) {
