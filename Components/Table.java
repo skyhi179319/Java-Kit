@@ -24,7 +24,7 @@ public class Table{
 			model.addColumn(Column);
 			for (int i = 0; i < Data.size(); i++) {
 				Object[] set = {Data.get(i)};
-				model.addColumn(set);
+				model.addRow(set);
 			}
 			j.setGridColor(Grid);
 		    j.setBackground(Background);
@@ -47,7 +47,7 @@ public class Table{
 			model.addColumn(Column);
 			for (int i = 0; i < Data.size(); i++) {
 				Object[] set = {Data.get(i)};
-				model.addColumn(set);
+				model.addRow(set);
 			}
 			j.setGridColor(Grid);
 		    j.setBackground(Background);
