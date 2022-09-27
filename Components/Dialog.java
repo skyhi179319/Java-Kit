@@ -17,6 +17,10 @@ public class Dialog extends JDialog{
 	public static ArrayList<JPanel> buttonComponents = new ArrayList<JPanel>();
 	public static ArrayList<JButton> buttonsComponent = new ArrayList<JButton>();
 	public static ArrayList<JDialog> dialog = new ArrayList<JDialog>();
+	public static int Opened = 0;
+	public static void addOpenedEvent() {
+		Opened = Opened + 1;
+	}
 	private void close() {
 		super.dispose();
 	} 
